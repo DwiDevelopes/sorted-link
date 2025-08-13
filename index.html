@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortLink | Professional URL Shortener</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-link"></i>
+                    <span>ShortLink</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#analytics">Analytics</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="btn login">Login</button>
+                    <button class="btn primary">Sign Up</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Shorten, share and track your links</h1>
+                    <p>Professional URL shortening service with detailed analytics for your marketing campaigns.</p>
+                    
+                    <div class="url-shortener-box">
+                        <div class="input-group">
+                            <input type="text" id="url-input" placeholder="Paste your long URL here...">
+                            <button id="shorten-btn" class="btn primary">Shorten</button>
+                        </div>
+                        <div class="custom-alias">
+                            <input type="text" id="custom-alias" placeholder="Custom alias (optional)">
+                            <span class="domain-hint">shortlnk.com/</span>
+                        </div>
+                    </div>
+                    
+                    <div id="result-container" class="result-container hidden">
+                        <div class="result-box">
+                            <div class="original-url">
+                                <span id="original-url-display"></span>
+                            </div>
+                            <div class="shortened-url">
+                                <a id="shortened-url-display" href="#" target="_blank"></a>
+                                <button id="copy-btn" class="btn copy-btn">
+                                    <i class="far fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+                        <div class="analytics-promo">
+                            <p>Track clicks, locations, and more with our <a href="#">advanced analytics</a>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://illustrations.popsy.co/amber/digital-nomad.svg" alt="URL Shortener Illustration">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Powerful Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Track clicks, geographic locations, devices, and referral sources in real-time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Secure Links</h3>
+                        <p>Password protection and expiration dates for sensitive links.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Custom Branding</h3>
+                        <p>Use your own domain and customize the look of your short URLs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h3>QR Codes</h3>
+                        <p>Generate QR codes for your links to use in print materials.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <i class="fas fa-link"></i>
+                        <span>ShortLink</span>
+                    </div>
+                    <p>Professional URL shortening service for businesses and marketers.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Developers</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ShortLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+<style>
+    :root {
+    --primary-color: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary-color: #3f37c9;
+    --text-color: #2b2d42;
+    --text-light: #8d99ae;
+    --background-color: #f8f9fa;
+    --white: #ffffff;
+    --gray-light: #e9ecef;
+    --success-color: #4cc9f0;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn.primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn.login {
+    background-color: transparent;
+    color: var(--text-color);
+    margin-right: 10px;
+}
+
+.btn.login:hover {
+    color: var(--primary-color);
+}
+
+.btn.copy-btn {
+    background-color: var(--gray-light);
+    color: var(--text-color);
+}
+
+.btn.copy-btn:hover {
+    background-color: #d1d5db;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 28px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* Hero Section */
+.hero {
+    padding: 150px 0 80px;
+    background-color: var(--white);
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.url-shortener-box {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 16px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+}
+
+.input-group button {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.custom-alias {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.custom-alias input {
+    flex: 1;
+    padding: 15px 15px 15px 120px;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.custom-alias input:focus {
+    border-color: var(--primary-color);
+}
+
+.domain-hint {
+    position: absolute;
+    left: 15px;
+    color: var(--text-light);
+}
+
+/* Result Container */
+.result-container {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.result-container.hidden {
+    display: none;
+}
+
+.result-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.original-url {
+    color: var(--text-light);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 50%;
+}
+
+.shortened-url {
+    display: flex;
+    align-items: center;
+}
+
+.shortened-url a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.shortened-url a:hover {
+    text-decoration: underline;
+}
+
+.analytics-promo {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.analytics-promo a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.analytics-promo a:hover {
+    text-decoration: underline;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(67, 97, 238, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--primary-color);
+    font-size: 28px;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.feature-card p {
+    color: var(--text-light);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2b2d42;
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-about .logo {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    margin-bottom: 20px;
+    color: #adb5bd;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 18px;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-links h4 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #495057;
+    color: #adb5bd;
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .input-group, .custom-alias {
+        flex-direction: column;
+    }
+    
+    .input-group input, .input-group button {
+        width: 100%;
+        border-radius: var(--border-radius);
+    }
+    
+    .input-group button {
+        margin-top: 10px;
+    }
+    
+    .custom-alias input {
+        padding: 15px;
+    }
+    
+    .domain-hint {
+        position: static;
+        margin-bottom: 5px;
+    }
+    
+    .result-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .original-url, .shortened-url {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .original-url {
+        margin-bottom: 10px;
+    }
+    
+    .shortened-url {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .shortened-url a {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        margin: 20px 0;
+    }
+    
+    .auth-buttons {
+        margin-top: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+}
+</style>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const urlInput = document.getElementById('url-input');
+    const shortenBtn = document.getElementById('shorten-btn');
+    const customAlias = document.getElementById('custom-alias');
+    const resultContainer = document.getElementById('result-container');
+    const originalUrlDisplay = document.getElementById('original-url-display');
+    const shortenedUrlDisplay = document.getElementById('shortened-url-display');
+    const copyBtn = document.getElementById('copy-btn');
+    
+    // Mock API function - in a real app, this would call your backend
+    function shortenUrl(longUrl, customAlias = '') {
+        return new Promise((resolve) => {
+            // Simulate API delay
+            setTimeout(() => {
+                const randomString = Math.random().toString(36).substring(2, 8);
+                const shortCode = customAlias || randomString;
+                const shortUrl = `https://shortlnk.com/${shortCode}`;
+                
+                resolve({
+                    success: true,
+                    shortUrl: shortUrl,
+                    originalUrl: longUrl,
+                    shortCode: shortCode
+                });
+            }, 800);
+        });
+    }
+    
+    // Validate URL
+    function isValidUrl(url) {
+        try {
+            new URL(url);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+    
+    // Shorten button click handler
+    shortenBtn.addEventListener('click', async function() {
+        const longUrl = urlInput.value.trim();
+        const alias = customAlias.value.trim();
+        
+        if (!longUrl) {
+            alert('Please enter a URL to shorten');
+            return;
+        }
+        
+        if (!isValidUrl(longUrl)) {
+            alert('Please enter a valid URL (include http:// or https://)');
+            return;
+        }
+        
+        // Disable button during processing
+        shortenBtn.disabled = true;
+        shortenBtn.textContent = 'Shortening...';
+        
+        try {
+            const result = await shortenUrl(longUrl, alias);
+            
+            if (result.success) {
+                originalUrlDisplay.textContent = result.originalUrl;
+                shortenedUrlDisplay.textContent = result.shortUrl;
+                shortenedUrlDisplay.href = result.shortUrl;
+                resultContainer.classList.remove('hidden');
+                
+                // Scroll to result
+                resultContainer.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                alert('Error shortening URL. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        } finally {
+            shortenBtn.disabled = false;
+            shortenBtn.textContent = 'Shorten';
+        }
+    });
+    
+    // Copy button click handler
+    copyBtn.addEventListener('click', function() {
+        const shortUrl = shortenedUrlDisplay.textContent;
+        
+        navigator.clipboard.writeText(shortUrl).then(() => {
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            copyBtn.style.backgroundColor = 'var(--success-color)';
+            
+            // Reset button after 2 seconds
+            setTimeout(() => {
+                copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
+                copyBtn.style.backgroundColor = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    });
+    
+    // Allow pressing Enter in URL input to submit
+    urlInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            shortenBtn.click();
+        }
+    });
+    
+    // Allow pressing Enter in custom alias to submit
+    customAlias.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            shortenBtn.click();
+        }
+    });
+});
+    </script>
+</body>
+</html>
